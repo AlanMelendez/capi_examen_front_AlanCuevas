@@ -3,14 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
 
 const routes: Routes = [
-  //creamos la ruta
   {
-    path: 'usuarios',
+    path: '',
     children: [
       {
         path: 'tablaUsuarios',
         component: TablaUsuariosComponent
       },
+      {
+        path: '**',
+        redirectTo: 'tablaUsuarios',
+      },
+      {
+        path: '',
+        redirectTo: 'tablaUsuarios',
+        pathMatch: 'full'
+      }
      
     ]
   },
