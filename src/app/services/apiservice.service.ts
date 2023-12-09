@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../env/enviroment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Usuario } from '../models/User';
+import { Observable, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class ApiserviceService {
   constructor( private httpClient: HttpClient) { }
 
 
-  getUsuarios(){
+  getUsuarios(): Observable<Usuario[]>{
   
     let dominio = this.urlApi+'/usuarios/obtenerUsuarios';
 
@@ -22,7 +24,12 @@ export class ApiserviceService {
       }
     };
 
-    this.httpClient.get(dominio, httpOptions);
+    return this.httpClient.get<Usuario[]>(dominio, httpOptions).pipe(
+      catchError(err => {
+        console.log('Error al obtener usuarios', err);
+        return [];
+      }
+    ));
 
   }
 }

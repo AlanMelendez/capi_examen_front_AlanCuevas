@@ -1,20 +1,30 @@
-
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Nombre de usuario</th>
-      <th scope="col">Fecha de nacimiento</th>
-      <th scope="col">Edad</th>
-      <th scope="col">Direccion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <p>hola mundo!!!</p>
-    <!-- <tr *ngFor="let usuario of usuarios">
-      <td>{{usuario.nombre}}</td>
-      <td>{{usuario.fechaNacimiento}}</td>
-      <td>{{usuario.edad}}</td>
-      <td>{{usuario.direccion}}</td>
-    </tr> -->
-  </tbody>
+<div class="contenedor-tabla">
+  <h2 class="mb-4">{{titleTabla | uppercase}}</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th>ID</th>
+          <th>NOMBRE USUARIO</th>
+          <th>FECHA NACIMIENTO</th>
+          <th>EDAD</th>
+          <th>DIRECCION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through each user in the list -->
+        <tr *ngFor="let user of usuarios">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.user_domicilio.fecha_nacimiento }}</td>
+          <td>{{ user.edad }}</td>
+          <td>{{ user.user_domicilio.domicilio }}</td>
+          <td>{{ user.user_domicilio.ciudad }}</td>
+          <td>{{ user.user_domicilio.cp }}</td>
+          <td>{{ user.created_at | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+          <td>{{ user.updated_at   | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
