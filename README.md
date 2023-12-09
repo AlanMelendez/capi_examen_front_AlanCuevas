@@ -1,27 +1,35 @@
-# CapiExamenFrontAlanCuevasMelendez
+# Prueba Examen Backend CAPI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+Proyecto para examen BACKEND ALAN CUEVAS MELENDEZ.
 
-## Development server
+## Requisitos previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js y npm
+- Angular CLI
+- API Backend Laravel ejecutándose localmente (asegúrate de tener las URL y puertos correctos configurados)
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Instala las dependencias de Node.js:
 
-## Build
+    ```bash
+    npm install
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Ejecuta la aplicación Angular:
 
-## Running unit tests
+    ```bash
+    ng serve -o
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Visita [http://localhost:4200](http://localhost:4200) en tu navegador para ver la aplicación Angular.
 
-## Running end-to-end tests
+6. Asegúrate de que la API Backend Laravel está ejecutándose localmente y configurada correctamente en tu aplicación Angular.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+7. ¡Listo! Ahora puedes comenzar a visualizar la parte backend!.
 
-## Further help
+## Notas adicionales
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Asegúrate de tener una conexión a internet activa al instalar las dependencias de Node.js.
+- Ajusta las configuraciones de CORS en la API Backend Laravel si es necesario.
+
