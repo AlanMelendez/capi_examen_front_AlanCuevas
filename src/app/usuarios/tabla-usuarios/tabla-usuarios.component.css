@@ -5,6 +5,12 @@ body {
   .contenedor-tabla{
     margin: 50px;
   }
+  .container-flex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .container {
     margin-top: 50px;

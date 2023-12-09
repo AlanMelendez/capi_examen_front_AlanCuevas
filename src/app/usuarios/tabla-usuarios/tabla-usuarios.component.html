@@ -1,5 +1,8 @@
 <div class="contenedor-tabla">
-  <h2 class="mb-4">{{titleTabla | uppercase}}</h2>
+  <div class="container-flex">
+    <h2 class="mb-4">{{titleTabla | uppercase}}</h2>
+
+  </div>
   <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover">
       <thead>
@@ -12,17 +15,18 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Loop through each user in the list -->
-        <tr *ngFor="let user of usuarios">
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.user_domicilio.fecha_nacimiento }}</td>
-          <td>{{ user.edad }}</td>
-          <td>{{ user.user_domicilio.domicilio }}</td>
-          <td>{{ user.user_domicilio.ciudad }}</td>
-          <td>{{ user.user_domicilio.cp }}</td>
-          <td>{{ user.created_at | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
-          <td>{{ user.updated_at   | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.name }}</td>
+          <td>{{ usuario.user_domicilio.fecha_nacimiento }}</td>
+          <td>{{ usuario.edad }}</td>
+          <td>
+            {{ usuario.user_domicilio.domicilio }}
+            #{{ usuario.user_domicilio.numero_exterior }}<br>
+            {{ usuario.user_domicilio.colonia }}, {{ usuario.user_domicilio.cp }}
+            {{ usuario.user_domicilio.ciudad }}
+        
+          </td>
         </tr>
       </tbody>
     </table>
